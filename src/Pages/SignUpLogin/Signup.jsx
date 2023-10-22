@@ -3,8 +3,28 @@ import facebook from "../../assets/icons/facebook.svg"
 import linkedin from "../../assets/icons/linkedin.svg"
 import google from "../../assets/icons/google.svg"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Signup = () => {
+    const {createUser} = useContext(AuthContext);
+    const handleSignUp = (e)=>{
+        e.preventDefault();
+        const name = e.target.name.value
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        
+        createUser(email, password)
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+    }
+
+
     return (
         <div className="flex justify-center items-center my-20 gap-16">
             <div>
@@ -14,7 +34,7 @@ const Signup = () => {
 
                 <h1 className="text-[#444444] text-[2.5rem] font-semibold text-center mt-[4.6rem]">Sign Up</h1>
 
-                <form className="mt-12">
+                <form onSubmit={handleSignUp} className="mt-12">
                     <p className=" text-[#444444] ml-[4.69rem] text-lg font-semibold">Name</p>
                     <input className="w-[28.8rem] mx-[4.69rem] mt-5 h-[3.75rem] rounded-xl border-2 border-[#E8E8E8] outline-none placeholder:text-[#A2A2A2] pl-5 " type="text" name="name" placeholder="Your name" id="" />
 

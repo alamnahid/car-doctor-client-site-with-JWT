@@ -3,13 +3,24 @@ import facebook from "../../assets/icons/facebook.svg"
 import linkedin from "../../assets/icons/linkedin.svg"
 import google from "../../assets/icons/google.svg"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext);
     const handleLogin = (e)=>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        
+        signIn(email, password)
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(error=>{
+            console.error(error)
+        })
     }
     return (
         <div className="flex justify-center items-center my-20 gap-16">
