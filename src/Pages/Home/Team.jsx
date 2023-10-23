@@ -3,9 +3,10 @@ import twitter from "../../assets/icons/twittergroup.svg"
 import linkedin from "../../assets/icons/linkedingroup.svg"
 import instagram from "../../assets/icons/instaaaa.svg"
 import instalogo from "../../assets/icons/insragram.svg"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
@@ -44,6 +45,10 @@ const cardData = [
 
 const Team = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    useEffect(() => {
+        // Initialize AOS
+        AOS.init();
+      }, []);
 
     const totalCards = cardData.length;
     const cardsToShow = 3; // Number of cards to show at a time
@@ -62,7 +67,7 @@ const Team = () => {
             const cardIndex = (currentSlide + i) % totalCards;
             const { imageSrc, title, designation } = cardData[cardIndex];
             cards.push(
-                <div key={cardIndex} className="card hover:translate-x-[-20px] cursor-pointer w-[22.75rem] h-[30.4rem] rounded-xl border-2 border-[#E8E8E8]">
+                <div data-aos="fade-down" key={cardIndex} className="card hover:translate-x-[-20px] cursor-pointer w-[22.75rem] h-[30.4rem] rounded-xl border-2 border-[#E8E8E8]">
                     <img className='w-[19.6rem] mt-[1.56rem] h-[18.3rem] rounded-xl mx-auto' src={imageSrc} alt={title} />
                     <h1 className='text-center text-[#444444] font-bold text-2xl'>{title}</h1>
                     <h1 className='text-[#737373] mt-3 text-xl text-center '>{designation}</h1>

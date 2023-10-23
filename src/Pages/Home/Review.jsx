@@ -1,7 +1,8 @@
 import quotes from "../../assets/icons/quote 1.svg"
 
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const cardData = [
@@ -34,6 +35,12 @@ const cardData = [
 
 const Review = () => {
 
+    
+ useEffect(() => {
+    // Initialize AOS
+    AOS.init();
+  }, []);
+
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -54,7 +61,7 @@ const Review = () => {
             const cardIndex = (currentSlide + i) % totalCards;
             const { imageSrc, name, designation, description } = cardData[cardIndex];
             cards.push(
-                <div key={cardIndex} className="card hover:translate-x-[-20px] w-[34.875rem] flex flex-col  justify-center  h-[21.8125rem] rounded-xl border-2 border-[#E8E8E8]">
+                <div data-aos="fade-left" key={cardIndex} className="card hover:translate-x-[-20px] w-[34.875rem] flex flex-col  justify-center  h-[21.8125rem] rounded-xl border-2 border-[#E8E8E8]">
                     <div className="flex gap-4 ml-[3.13rem]">
                         <img className='w-[3.75rem] h-[3.75rem] rounded-[50%]' src={imageSrc} alt="" />
                         <div>

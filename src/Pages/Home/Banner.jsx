@@ -27,7 +27,7 @@ const Banner = () => {
       };
     return (
         <div>
-            <div className="carousel w-full h-[38rem]">
+            <div className="carousel w-full h-[38rem] mt-20">
                 <div id="slide1" className={`carousel-item relative w-full mt-12 ${currentSlide === 1 ? 'active' : 'hidden'}`}>
                     <img src={img1} className="w-full rounded-xl" />
                     <div className="absolute rounded-xl h-full flex flex-col transform -translate-y-1/2 pt-20 pl-24 top-1/2 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">

@@ -11,7 +11,7 @@ const Navbar = () => {
     <li><NavLink to='/contact'>Contact</NavLink></li>
   </>
   return (
-    <div className="">
+    <div className="fixed w-full z-50 px-[10%]">
       <div className="navbar bg-base-100 h-24">
         <div className="navbar-start">
           <div className="dropdown">
