@@ -21,7 +21,7 @@ const Services = () => {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center items-center">
 
                     {
-                        services?.map(item=><div key={item._id} className="w-[22.75rem] h-[21.75rem] rounded-xl border-2 border-[#E8E8E8]">
+                        services?.map(item=><div key={item._id} className="w-[22.75rem] h-[21.75rem] rounded-xl border-2 border-[#E8E8E8] hover:bg-[#7c6f6d44] hover:scale-105 cursor-pointer">
                         <img className="w-[19.625rem] h-[13rem] mx-auto mt-[1.56rem] rounded-xl" src={item?.img} alt="" />
 
                         <h1 className="text-[#444444] text-2xl pl-5 font-semibold my-5">{item.title}</h1>
@@ -33,6 +33,10 @@ const Services = () => {
 
                 </div>)
                     }
+            </div>
+
+            <div className="text-center mt-12">
+                <button className="text-[#FF3811] capitalize btn-outline btn text-[1.125rem] font-medium">More Services</button>
             </div>
         </div>
     );
