@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar";
 import ServiceDetailsBanner from "./ServiceDetailsBanner";
 import ServiceLeftContainer from "./ServiceLeftContainer";
@@ -5,6 +6,8 @@ import ServiceRightContainer from "./ServiceRightContainer";
 
 
 const ServiceDEtails = () => {
+    const servicedetails = useLoaderData();
+    
     return (
         <div>
             <div className="pb-32">
@@ -17,10 +20,10 @@ const ServiceDEtails = () => {
 
                 <div className="flex justify-between gap-16">
                     <div className="flex-1">
-                    <ServiceLeftContainer></ServiceLeftContainer>
+                    <ServiceLeftContainer servicedetails={servicedetails}></ServiceLeftContainer>
                     </div>
                     <div>
-                    <ServiceRightContainer></ServiceRightContainer>
+                    <ServiceRightContainer servicedetails={servicedetails}></ServiceRightContainer>
                     </div>
                 </div>
 

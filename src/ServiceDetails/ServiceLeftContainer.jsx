@@ -1,40 +1,40 @@
 import bg from "../assets/icons/bgservice.svg"
 
-const ServiceLeftContainer = () => {
+const ServiceLeftContainer = ({servicedetails}) => {
     return (
         <div className="mt-32">
-            <img className="w-full" src="https://i.ibb.co/svJzkN0/Rectangle-1540.png" alt="" />
-            <h1 className="text-black text-[2.1rem] font-bold mt-12">Unique Car Engine Service</h1>
+            <img className="w-full rounded-xl" src={servicedetails.img} alt="" />
+            <h1 className="text-black text-[2.1rem] font-bold mt-12">{servicedetails.title}</h1>
             <p className="mt-8 text-[#737373] text-base">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text.
+                {servicedetails.description}
             </p>
 
             <div className="grid grid-cols-2 gap-8 mt-8">
 
                 <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
-                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">Instant Car Services</h1>
-                    <p className="mt-3 px-10 text-[#737373]">It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[0].name}</h1>
+                    <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[0].details}</p>
 
                 </div>
                 <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
-                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">Instant Car Services</h1>
-                    <p className="mt-3 px-10 text-[#737373]">It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[1].name}</h1>
+                    <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[1].details}</p>
 
                 </div>
                 <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
-                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">Instant Car Services</h1>
-                    <p className="mt-3 px-10 text-[#737373]">It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[2].name}</h1>
+                    <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[2].details}</p>
 
                 </div>
                 <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
-                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">Instant Car Services</h1>
-                    <p className="mt-3 px-10 text-[#737373]">It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                    <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[3].name}</h1>
+                    <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[3].details}</p>
 
                 </div>
             </div>
 
             <p className="mt-8 text-[#737373] text-base">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text.
+                {servicedetails.description}
             </p>
 
             <h1 className="text-black text-[2.1rem] font-bold mt-12 mb-8">3 Simple Steps to Process</h1>

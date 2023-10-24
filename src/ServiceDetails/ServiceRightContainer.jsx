@@ -1,8 +1,9 @@
 import { FaArrowRight } from "react-icons/fa";
 import file from "../assets/icons/fileicon.svg"
 import logo from "../assets/icons/logoicon.svg"
+import { Link } from "react-router-dom";
 
-const ServiceRightContainer = () => {
+const ServiceRightContainer = ({servicedetails}) => {
     return (
         <div className="mt-32">
 
@@ -90,9 +91,9 @@ const ServiceRightContainer = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-[2.1rem] font-bold my-8">Price $250.00</h1>
+            <h1 className="text-[2.1rem] font-bold my-8">Price ${servicedetails.price}</h1>
 
-            <button className="btn btn-secondary bg-[#FF3811] flex justify-center items-center text-white text-lg font-semibold w-[24rem] rounded-md h-14">Procced Checkout</button>
+            <Link to={`/checkout/${servicedetails._id}`}><button className="btn btn-secondary bg-[#FF3811] flex justify-center items-center text-white text-lg font-semibold w-[24rem] rounded-md h-14">Procced Checkout</button></Link>
             
         </div>
     );
