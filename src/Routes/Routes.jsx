@@ -30,12 +30,12 @@ const router = createBrowserRouter([
         {
           path: '/servicedetails/:id',
           element: <ServiceDEtails></ServiceDEtails>,
-          loader: ({params})=>fetch(`http://localhost:5000/servicedetails/${params.id}`)
+          loader: ({params})=>fetch(`https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/servicedetails/${params.id}`)
         },
         {
           path: '/checkout/:id',
           element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/servicedetails/${params.id}`)
+          loader: ({params})=>fetch(`https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/servicedetails/${params.id}`)
         },
         {
           path: '/cartdetails',
