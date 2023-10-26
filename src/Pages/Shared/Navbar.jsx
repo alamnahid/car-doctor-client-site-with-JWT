@@ -1,18 +1,29 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg"
 import { HiOutlineShoppingBag, HiOutlineSearch } from "react-icons/hi";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext)
+  
+
+  const handdleLogout = ()=>{
+    logOut()
+    .then()
+    .catch()
+  }
+
   const navItems = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/about'>About</NavLink></li>
     <li><NavLink to='/service'>Services</NavLink></li>
-    <li><NavLink to='/blog'>Blog</NavLink></li>
+    <li><NavLink to='/cartdetails'>My Cart</NavLink></li>
     <li><NavLink to='/contact'>Contact</NavLink></li>
   </>
   return (
-    <div className="fixed w-full z-50 px-[10%]">
-      <div className="navbar bg-base-100 h-24">
+    <div className="lg:fixed lg:w-full z-50 lg:px-[7%]">
+      <div className="navbar bg-base-100 h-24 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,17 +33,21 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost normal-case text-xl"><img className="w-[5rem]" src={logo} alt="" /></Link>
+          <Link to='/' className="btn btn-ghost normal-case text-xl"><img className="w-[3rem] lg:w-[5rem]" src={logo} alt="" /></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {navItems}
           </ul>
         </div>
-        <div className="navbar-end flex items-center gap-3 text-lg">
+        <div className="navbar-end flex ml-12 lg:ml-0 items-center gap-3 text-lg">
           <HiOutlineShoppingBag />
           <HiOutlineSearch />
-          <button className="btn btn-outline text-[#FF3811] text-lg font-medium border-[#FF3811] capitalize">Appointment</button>
+         {
+          user ?  <Link to='/login'><button onClick={handdleLogout} className="btn btn-outline text-[#FF3811] text-lg font-medium border-[#FF3811] capitalize">Logout</button></Link>
+          :
+          <Link to='/login'><button className="btn btn-outline text-[#FF3811] text-lg font-medium border-[#FF3811] capitalize">Login</button></Link>
+         }
         </div>
       </div>
     </div>

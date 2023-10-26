@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/f8DYKTv/1.png",
+      "title": "Engine Oil Change",
+      "price": 39.99,
+      "description": "Regular engine oil change to keep your car running smoothly.",
+      "details": "Regularly changing your engine oil helps maintain engine performance and prolongs the life of your vehicle. Our service includes draining the old oil, replacing the oil filter, and filling it with fresh, high-quality engine oil."
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/VV0BRGs/2.png",
+      "title": "Brake Pad Replacement",
+      "price": 49.99,
+      "description": "Replace worn-out brake pads for improved stopping power.",
+      "details": "Brake pad replacement is crucial for safety and maintaining your vehicle's braking performance. Our service includes removing the old brake pads, inspecting the brake system, and installing new, high-quality brake pads."
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/VxDbRRw/3.png",
+      "title": "Air Filter Replacement",
+      "price": 19.99,
+      "description": "Improve your car's air quality with a fresh air filter.",
+      "details": "Replacing the air filter ensures that clean air enters your engine, which leads to better fuel efficiency and performance. Our service includes removing the old air filter and installing a new, clean air filter."
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/b2x6Szn/4.png",
+      "title": "Tire Rotation",
+      "price": 29.99,
+      "description": "Extend the life of your tires and improve handling.",
+      "details": "Regular tire rotation helps ensure even tire wear, which extends the life of your tires. We'll move each tire to a different position to promote even wear and improve handling."
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/spSDbyv/5.png",
+      "title": "Battery Replacement",
+      "price": 59.99,
+      "description": "Replace your car's battery for reliable starts every time.",
+      "details": "A new car battery ensures that your vehicle starts reliably. Our service includes removing the old battery, checking the charging system, and installing a new, dependable battery."
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/NS44D3R/6.png",
+      "title": "Spark Plug Replacement",
+      "price": 24.99,
+      "description": "Improve engine performance and fuel efficiency with new spark plugs.",
+      "details": "Replacing worn-out spark plugs helps improve engine performance and fuel efficiency. We'll remove the old spark plugs and install new, high-quality plugs."
+    }
+  ]
+  

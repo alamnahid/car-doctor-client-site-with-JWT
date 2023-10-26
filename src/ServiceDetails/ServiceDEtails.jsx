@@ -10,15 +10,15 @@ const ServiceDEtails = () => {
     
     return (
         <div>
-            <div className="pb-32">
+            <div className="lg:pb-32">
                 <Navbar></Navbar>
             </div>
 
-            <div className="max-w-[95rem] mx-auto ">
+            <div className="lg:max-w-[95rem] mx-auto ">
 
                 <ServiceDetailsBanner></ServiceDetailsBanner>
 
-                <div className="flex justify-between gap-16">
+                <div className="flex flex-col lg:flex-row justify-between gap-16">
                     <div className="flex-1">
                     <ServiceLeftContainer servicedetails={servicedetails}></ServiceLeftContainer>
                     </div>

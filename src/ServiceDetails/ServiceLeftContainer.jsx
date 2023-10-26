@@ -1,32 +1,33 @@
+/* eslint-disable react/prop-types */
 import bg from "../assets/icons/bgservice.svg"
 
 const ServiceLeftContainer = ({servicedetails}) => {
     return (
-        <div className="mt-32">
+        <div className="mt-32 p-3 lg:p-0">
             <img className="w-full rounded-xl" src={servicedetails.img} alt="" />
             <h1 className="text-black text-[2.1rem] font-bold mt-12">{servicedetails.title}</h1>
             <p className="mt-8 text-[#737373] text-base">
                 {servicedetails.description}
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
 
-                <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
+                <div className="flex-1 lg:h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
                     <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[0].name}</h1>
                     <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[0].details}</p>
 
                 </div>
-                <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
+                <div className="flex-1 lg:h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
                     <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[1].name}</h1>
                     <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[1].details}</p>
 
                 </div>
-                <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
+                <div className="flex-1 lg:h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
                     <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[2].name}</h1>
                     <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[2].details}</p>
 
                 </div>
-                <div className="flex-1 h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
+                <div className="flex-1 lg:h-[12.75rem] rounded-xl border-t-2 border-[#FF3811] bg-[#F3F3F3]">
                     <h1 className="text-[#444] text-xl font-bold mt-10 ml-10">{servicedetails.facility[3].name}</h1>
                     <p className="mt-3 px-10 text-[#737373]">{servicedetails.facility[3].details}</p>
 

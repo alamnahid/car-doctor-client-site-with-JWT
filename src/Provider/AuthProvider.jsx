@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth"
+import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth"
 import app from "../firebase/firebase.confiq";
 
  export const AuthContext = createContext()
@@ -8,6 +9,7 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const provider = new GoogleAuthProvider();
 
     const createUser = (email, password)=>{
         setLoading(true)
@@ -18,11 +20,18 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+    const googleSignIn = ()=>{
+        return signInWithPopup(auth, provider)
+    }
+    const logOut = ()=>{
+        setLoading(true)
+        return signOut(auth)
+    }
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
             setLoading(false)
-            console.log(currentUser)
+            
         })
         return ()=>{
             unsubscribe()
@@ -35,7 +44,9 @@ const AuthProvider = ({children}) => {
         user,
         loading,
         createUser,
-        signIn
+        signIn,
+        logOut,
+        googleSignIn
     }
     return (
         <AuthContext.Provider value={authInfo}>

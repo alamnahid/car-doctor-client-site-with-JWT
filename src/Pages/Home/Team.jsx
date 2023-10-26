@@ -92,12 +92,12 @@ const Team = () => {
         <div className="mt-32">
             <div className="text-center">
                 <p className="text-[#FF3811] text-xl font-bold">Team</p>
-                <h1 className="mt-5 text-[2.8rem] font-bold">Meet Our Team</h1>
-                <p className="mt-5 mx-auto w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+                <h1 className="mt-5 text-2xl lg:text-[2.8rem] font-bold">Meet Our Team</h1>
+                <p className="mt-5 mx-auto lg:w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
             </div>
 
             <div className="carousel-container relative mt-12">
-                <div className="carousel flex justify-evenly items-center">
+                <div className="carousel flex flex-col lg:flex-row justify-evenly items-center">
                     {renderCards()}
                 </div>
                 <div className=" flex justify-between ">

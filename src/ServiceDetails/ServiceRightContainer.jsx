@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
 import file from "../assets/icons/fileicon.svg"
 import logo from "../assets/icons/logoicon.svg"
@@ -7,7 +8,7 @@ const ServiceRightContainer = ({servicedetails}) => {
     return (
         <div className="mt-32">
 
-            <div className="w-[24rem] h-[30rem] rounded-xl bg-[#F3F3F3]">
+            <div className="lg:w-[24rem] h-[30rem] rounded-xl bg-[#F3F3F3]">
                 <h1 className="text-black pt-10 pl-10 text-2xl font-bold">Services</h1>
 
                 <div className="mx-10  cursor-pointer mt-5 h-14 bg-white rounded-md hover:bg-[#FF3811] hover:text-white text-black">
@@ -38,7 +39,7 @@ const ServiceRightContainer = ({servicedetails}) => {
 
             </div>
 
-            <div className="w-[24rem] h-[17rem] rounded-xl bg-black mt-8">
+            <div className="lg:w-[24rem] h-[17rem] rounded-xl bg-black mt-8">
                 <h1 className="text-white text-2xl font-extrabold pt-10 pl-10">Download</h1>
                 <div className="flex justify-between items-center px-[2.5rem] mt-5">
                    <div className="flex gap-3 items-center">
@@ -75,7 +76,7 @@ const ServiceRightContainer = ({servicedetails}) => {
 
 
 
-            <div className="w-[24rem] mt-8 flex justify-center items-center flex-col h-[30rem] rounded-xl bg-black">
+            <div className="lg:w-[24rem] mt-8 flex justify-center items-center flex-col h-[30rem] rounded-xl bg-black">
                 <img src={logo} alt="" />
                 <h1 className="text-white text-[1.6rem] font-bold">Car Doctor</h1>
                 <p className="mt-5 text-xl text-white font-bold text-center">Need Help? We Are Here <br />To Help You</p>
@@ -93,7 +94,7 @@ const ServiceRightContainer = ({servicedetails}) => {
             </div>
             <h1 className="text-[2.1rem] font-bold my-8">Price ${servicedetails.price}</h1>
 
-            <Link to={`/checkout/${servicedetails._id}`}><button className="btn btn-secondary bg-[#FF3811] flex justify-center items-center text-white text-lg font-semibold w-[24rem] rounded-md h-14">Procced Checkout</button></Link>
+            <Link to={`/checkout/${servicedetails._id}`}><button className="btn btn-secondary bg-[#FF3811] flex justify-center items-center text-white text-lg font-semibold w-full lg:w-[24rem] rounded-md h-14">Procced Checkout</button></Link>
             
         </div>
     );

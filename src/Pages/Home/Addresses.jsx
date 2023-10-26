@@ -12,8 +12,8 @@ const Addresses = () => {
         AOS.init();
       }, []);
     return (
-        <div className="mt-32 w-full flex justify-evenly items-center h-[16rem] rounded-xl bg-black">
-            <div data-aos="fade-left" className="flex items-center gap-4">
+        <div className="mt-32 w-full flex flex-col gap-16 p-8 lg:p-0 lg:gap-0 lg:flex-row justify-evenly items-center lg:h-[16rem] rounded-xl bg-black">
+            <div data-aos="fade-right" className="flex items-center gap-4">
                 <img src={calendar} alt="" />
                 <div>
                     <p className="font-medium text-white">We are open monday-friday</p>

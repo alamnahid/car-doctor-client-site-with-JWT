@@ -20,10 +20,10 @@ const Services = () => {
     
     return (
         <div>
-            <div className="text-center">
+            <div className="text-center mt-8 lg:mt-0">
                 <p className="text-[#FF3811] text-xl font-bold">Service</p>
-                <h1 className="mt-5 text-[2.8rem] font-bold">Our Service Area</h1>
-                <p className="mt-5 mx-auto w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+                <h1 className="mt-5 text-2xl lg:text-[2.8rem] font-bold">Our Service Area</h1>
+                <p className="mt-5 mx-auto lg:w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center items-center">
@@ -43,9 +43,7 @@ const Services = () => {
                     }
             </div>
 
-            <div className="text-center mt-12">
-                <button className="text-[#FF3811] capitalize btn-outline btn text-[1.125rem] font-medium">More Services</button>
-            </div>
+            
         </div>
     );
 };

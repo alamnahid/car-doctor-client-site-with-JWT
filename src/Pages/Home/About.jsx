@@ -3,8 +3,8 @@ import parts from "../../assets/images/about_us/parts.jpg"
 
 const About = () => {
     return (
-        <div className="flex gap-24 items-center my-32">
-            <div className="relative w-1/2">
+        <div className="flex flex-col lg:flex-row gap-24 items-center lg:my-32 p-5 lg:p-0">
+            <div className="relative lg:w-1/2">
                 <img className="w-3/4 rounded-xl " src={person} alt="" />
                 <img className="w-1/2 rounded-xl border-8 border-white absolute top-1/2 left-1/2 " src={parts} alt="" />
             </div>

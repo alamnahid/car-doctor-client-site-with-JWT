@@ -18,14 +18,14 @@ const ChooseUs = () => {
   }, []);
     return (
         <div className="mt-32">
-            <div data-aos="fade-left" className="text-center">
+            <div data-aos="fade-right" className="text-center">
                 <p className="text-[#FF3811] text-xl font-bold">Core Features</p>
                 <h1 className="mt-5 text-[2.8rem] font-bold">Why Choose Us</h1>
-                <p className="mt-5 mx-auto w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+                <p className="mt-5 mx-auto lg:w-[50rem] text-[#737373]">The majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
             </div>
 
-            <div className="flex gap-5 justify-between items-center flex-wrap mt-12">
-                <div data-aos="fade-left" className="w-[10.6rem] h-[9.75rem] rounded-xl border-2 flex flex-col justify-center items-center text-[#444444] hover:bg-[#FF3811] hover:text-white cursor-pointer">
+            <div className="flex gap-3 lg:gap-5 justify-between items-center flex-wrap mt-12">
+                <div data-aos="fade-right" className="w-[10.6rem] h-[9.75rem] rounded-xl border-2 flex flex-col justify-center items-center text-[#444444] hover:bg-[#FF3811] hover:text-white cursor-pointer">
                     <img src={ch1} alt="" />
                     <h1 className=" font-bold text-lg text-center mt-5">Expert Team</h1>
                 </div>
@@ -41,7 +41,7 @@ const ChooseUs = () => {
                     <img src={ch2} alt="" />
                     <h1 className=" font-bold text-lg text-center mt-5">Best Equipment</h1>
                 </div>
-                <div data-aos="fade-left" className="w-[10.6rem] h-[9.75rem] rounded-xl border-2 flex flex-col justify-center items-center text-[#444444] hover:bg-[#FF3811] hover:text-white cursor-pointer">
+                <div data-aos="fade-right" className="w-[10.6rem] h-[9.75rem] rounded-xl border-2 flex flex-col justify-center items-center text-[#444444] hover:bg-[#FF3811] hover:text-white cursor-pointer">
                     <img src={ch5} alt="" />
                     <h1 className=" font-bold text-lg text-center mt-5">100% Guranty</h1>
                 </div>
