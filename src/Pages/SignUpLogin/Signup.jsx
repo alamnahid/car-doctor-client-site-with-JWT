@@ -3,7 +3,7 @@ import login from "../../assets/images/login/login.svg"
 import facebook from "../../assets/icons/facebook.svg"
 import linkedin from "../../assets/icons/linkedin.svg"
 import google from "../../assets/icons/google.svg"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Shared/Navbar";
@@ -11,6 +11,8 @@ import Swal from "sweetalert2";
 
 const Signup = () => {
     const {createUser, googleSignIn} = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
     const handleSignUp = (e)=>{
         e.preventDefault();
         const name = e.target.name.value
@@ -20,6 +22,12 @@ const Signup = () => {
         createUser(email, password)
         .then(result=>{
             console.log(result.user)
+            Swal.fire(
+                'Good job!',
+                'Successfully Logged In',
+                'success'
+              )
+              navigate(location?.state ? location?.state : '/')
         })
         .catch(error=>{
             console.log(error)

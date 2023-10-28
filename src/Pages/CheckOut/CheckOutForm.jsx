@@ -24,7 +24,7 @@ const CheckOutForm = ({data}) => {
 
         const order = {
             customerName: name,
-            customerEmail: email,
+            email: email,
             customerPhone: phone,
             serviceDate: date,
             serviceTitle: title,
@@ -33,7 +33,7 @@ const CheckOutForm = ({data}) => {
             price: price,
             serviceImg: img
         }
-        fetch('https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/bookings',{
+        fetch('http://localhost:5000/bookings',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

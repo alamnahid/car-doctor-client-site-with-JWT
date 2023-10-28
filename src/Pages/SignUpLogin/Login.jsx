@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Shared/Navbar";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
 
@@ -22,8 +23,25 @@ const Login = () => {
         const password = e.target.password.value;
         
         signIn(email, password)
-        .then(result=>{
-            console.log(result.user)
+        .then(result => {
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            const user = { email };
+
+            // get access token
+            axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.success) {
+                        navigate(location?.state ? location?.state : '/')
+                    }
+                    Swal.fire(
+                        'Good job!',
+                        'Successfully Logged In',
+                        'success'
+                      )
+                })
+
         })
         .catch(error=>{
             console.error(error)

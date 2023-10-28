@@ -6,18 +6,23 @@ import Footer from "../Shared/Footer";
 import deletee from "../../assets/icons/delete.svg"
 import Swal from "sweetalert2";
 import CartBanner from "./CartBanner";
+import axios from "axios";
 
 
 const CartDetails = () => {
   const { user } = useContext(AuthContext)
-  console.log(user?.email)
+  // console.log(user?.email)
   const [bookings, setBookings] = useState([])
 
-  const url = `https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/bookings?email=${user.email}`;
+  const url = `http://localhost:5000/bookings?email=${user.email}`;
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setBookings(data))
+    axios(url, {withCredentials: true})
+    .then(res=>{
+      setBookings(res.data)
+    })
+    // fetch(url)
+    //   .then(res => res.json())
+    //   .then(data => setBookings(data))
   }, [url])
 
   const handleDelete = (id)=>{
@@ -31,7 +36,7 @@ const CartDetails = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/bookings/${id}`, {
+        fetch(`http://localhost:5000/bookings/${id}`, {
           method: 'DELETE'
         })
         .then(res=>res.json())
@@ -53,7 +58,7 @@ const CartDetails = () => {
   }
 
   const handleConfirm = id=>{
-    fetch(`https://car-doctor-server-97ahxp1ro-nahid-alams-projects.vercel.app/bookings/${id}`,{
+    fetch(`http://localhost:5000/bookings/${id}`,{
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'
@@ -88,7 +93,7 @@ const CartDetails = () => {
               {/* row 1 */}
 
               {
-                bookings.map(booking => <tr key={booking._id} className="flex justify-between items-center flex-col lg:flex-row gap-4 lg:gap-0">
+                bookings?.map(booking => <tr key={booking._id} className="flex justify-between items-center flex-col lg:flex-row gap-4 lg:gap-0">
                   <th>
                     <label>
                       <img onClick={()=>handleDelete(booking._id)} className="cursor-pointer" src={deletee} alt="" />
